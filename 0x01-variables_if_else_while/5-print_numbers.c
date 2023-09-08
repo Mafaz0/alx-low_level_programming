@@ -12,7 +12,7 @@ int main(void)
 {
 	int digit;
 
-	for (digit = 0; i <= 9; i++)
+	for (digit = 0; digit <= 9; digit++)
 	{
 		printf("%i", digit)
 	}
