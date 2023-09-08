@@ -14,7 +14,7 @@ int main(void)
 
 	for (digit = 0; digit <= 9; digit++)
 	{
-		printf("%i", digit)
+		printf("%i", digit);
 	}
 	printf("\n")
 	return (0);
