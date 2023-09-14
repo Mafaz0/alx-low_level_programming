@@ -41,7 +41,7 @@ void largest_prime_factor(long int num)
 	{
 		while (num % prmNu == 0)
 		{
-			num = num / pmrNu;
+			num = num / prmNu;
 			largest = prmNu;
 		}
 	}
