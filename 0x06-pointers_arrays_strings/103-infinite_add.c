@@ -24,7 +24,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (d + 1 > size_r)
 		return (0);
 	r[d] = '\0';
-	for (c = d - 1; c >= 0; c++)
+	for (c = d - 1; c >= 0; c--)
 	{
 		a--;
 		b--;
