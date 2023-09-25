@@ -1,10 +1,15 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _memset - a function that is fills
+ *
  * @s: a pointer
+ *
  * @b: char
+ *
  * @n: int
+ *
  * Return: return s
 */
 
