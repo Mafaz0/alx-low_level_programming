@@ -1,0 +1,22 @@
+#include "main.h"
+
+/**
+ * _puts_recursion - a function that
+ *
+ * @s: char
+ *
+ * Return: mmmm
+*/
+
+void _puts_recursion(char *s)
+{
+	if (*s == '\0')
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		_putchar(*s);
+		_putchar(*s + 1);
+	}
+}
