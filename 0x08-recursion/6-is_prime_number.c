@@ -1,5 +1,6 @@
 #include "main.h"
-#include <stdio.h>
+
+int aprime(int n, int w);
 
 /**
  * is_prime_number - a function that  returns 1 if the input integer
