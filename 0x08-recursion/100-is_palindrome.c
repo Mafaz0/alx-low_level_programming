@@ -2,7 +2,7 @@
 
 /**
  * index - function count the null char
- * @s: a parameter
+ * @s: pointer to st
  * Return: integer
 */
 
