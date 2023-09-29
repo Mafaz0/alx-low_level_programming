@@ -1,54 +1,48 @@
 #include "main.h"
 
-/**
- * index - function count the null char
- * @s: pointer to st
- * Return: integer
-*/
-
-int is_palindrome(char *s);
-int _test(char *s, int f, int l, int qu);
-int index(char *s)
-{
-	int m = 0;
-
-	if (*s > '\0')
-		m += index(s + 1) + 1;
-
-	return (m);
-}
+int _test(char *s, int j, int lng);
+int _lengh(char *s);
 
 /**
- * is_palindrome -  a function that returns 1 if a string is
- * a palindrome and 0 if not
- * @s: string
+ * is_palindrome - function that test a string
+ * @s: string 1
  * Return: int
 */
 
 int is_palindrome(char *s)
 {
-	int l = index(s);
-
-	return (_test(s, 0, l - 1, l % 2));
+	if (*s == 0)
+		return (1);
+	return (_test(s, 0, _lengh(s)));
 }
 
 /**
- * _test - function that to test
- * @s: pointer
- * @f: int 1
- * @l: int 2
- * @qu: int 2
- * Return: integer
+ * _lengh - afunction that found the length of the string
+ * @s: string to
+ * Return: length of string
 */
 
-int _test(char *s, int f, int l, int qu)
+int _lengh(char *s)
 {
-	if ((f == l && qu != 0) || (f == l + 1 && qu == 0))
-		return (1);
-	else if (s[f] != s[l])
+	if (*s == '\0')
 		return (0);
-	else
-		return (_test(s, f + 1, l - 1, qu));
+	return (1 + _lengh(s + 1));
 }
 
+/**
+ * _test - afunction *that test string
+ *
+ * @s: char point
+ * @j: int 1
+ * @lng: int 2
+ * Return: 1 or 0
+*/
 
+int _test(char *s, int j, int lng)
+{
+	if (*(s + j) != *(s + lng - 1))
+		return (0);
+	if (j >= lng)
+		return (1);
+	return (_test(s, j + 1, lng - 1));
+			}
