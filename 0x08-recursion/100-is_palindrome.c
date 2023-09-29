@@ -1,33 +1,54 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * is_palindrome - a function that test to return 1 if the string
- * is palindrome and 0 if not
- * @n: parameter
- * @qu: parameter
+ * index - function count the null char
+ * @s: a parameter
  * Return: integer
 */
 
-int test(int n, int qu);
-int is prime_number(int n)
+int is_palindrome(char *s);
+int _test(char *s, int f, int l, int qu);
+int index(char *s)
 {
-	return (test(n, 2));
+	int m = 0;
+
+	if (*s > '\0')
+		m += index(s + 1) + 1;
+
+	return (m);
 }
 
 /**
- * test - a function that test all
- * @n: parameter
- * @qu: parameter
+ * is_palindrome -  a function that returns 1 if a string is
+ * a palindrome and 0 if not
+ * @s: string
+ * Return: int
+*/
+
+int is_palindrome(char *s)
+{
+	int l = index(s);
+
+	return (_test(s, 0, l - 1, l % 2));
+}
+
+/**
+ * _test - function that to test
+ * @s: pointer
+ * @f: int 1
+ * @l: int 2
+ * @qu: int 2
  * Return: integer
 */
 
-int test(int n, int qu)
+int _test(char *s, int f, int l, int qu)
 {
-	if (qu >= n && n > 1)
+	if ((f == l && qu != 0) || (f == l + 1 && qu == 0))
 		return (1);
-	else if (n % qu == 0 || n <= 1)
+	else if (s[f] != s[l])
 		return (0);
 	else
-		return (test(n, qu + 1));
+		return (_test(s, f + 1, l - 1, qu));
 }
+
+
