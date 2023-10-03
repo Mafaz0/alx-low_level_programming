@@ -5,23 +5,23 @@
  * Return: 0
 */
 char *_strdup(char *str)
-{	int g, u = 0;
+{	int g = 0, u = 0;
 	char *qu;
 
 	if (str == NULL)
 	return (NULL);
 
-	for (; str[size] != '\0'; size++)
+	for (; str[u] != '\0'; u++)
 	;
 
-	qu = malloc(size * sizeof(*str) + 1);
+	qu = malloc(u * sizeof(*str) + 1);
 
 	if (qu == 0)
 	return (NULL);
 	else
 	{
-	for (; g < size; g++)
+	for (; g < u; g++)
 	qu[g] = str[g];
 	}
 	return (qu);
-
+}
